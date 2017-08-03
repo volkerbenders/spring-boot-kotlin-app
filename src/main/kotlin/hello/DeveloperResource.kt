@@ -12,7 +12,9 @@ class DeveloperResource {
 
     @Autowired
     lateinit var helloService: HelloService
-    val devs = listOf("Benedikt", "Herve", "Eddi", "Ishita", "Florian", "Volker")
+    //@Autowired
+    //lateinit var developerService: DeveloperService
+
 
     @GET
     @Path("/all")
