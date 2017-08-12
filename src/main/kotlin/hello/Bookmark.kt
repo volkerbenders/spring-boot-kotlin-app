@@ -1,6 +1,6 @@
 package hello
 
-//import javax.persistence.*;
+
 /**
  * Created by vbe on 08.08.17.
  */

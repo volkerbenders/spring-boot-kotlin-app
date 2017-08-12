@@ -1,4 +1,6 @@
 target/
+derby.log
+itzelBritzelDB/
 
 ### IntelliJ IDEA ###
 .idea
