@@ -9,4 +9,7 @@ class DeveloperService {
     //fun getHello() = "Hello service!"
 
     //fun getDevelopers() = "Benedikt, Volker, Herve, Eddi, Florian"
+    fun getDevelopers(){
+        Developer(1, "Volker", "Benders")
+    }
 }

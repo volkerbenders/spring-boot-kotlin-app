@@ -13,9 +13,19 @@ class HelloResource {
     @Autowired
     lateinit var helloService: HelloService
 
+    //@Autowired
+    //lateinit var developerService: DeveloperService
+
     @GET
-    @Path("/string")
-    fun helloString() = "Hello string!"
+    @Path("/jaxrsdevelopers")
+    fun developerService() {
+        var dev = "Azrael"
+    }
+    //fun developerService() = developerService.getDevelopers()
+
+    //@GET
+    //@Path("/string")
+    //fun helloString() = "Hello string!"
 
     @GET
     @Path("/service")

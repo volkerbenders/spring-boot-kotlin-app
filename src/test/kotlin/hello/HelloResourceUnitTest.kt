@@ -18,13 +18,14 @@ class HelloResourceUnitTest {
     @Mock
     lateinit var helloService: HelloService
 
+    /*
     @Test
     fun testHelloController() {
         val result = helloResource.helloString()
         assertNotNull(result)
         assertEquals("Hello string!", result)
     }
-
+*/
     @Test
     fun testHelloService() {
         doReturn("Hello service!").`when`(helloService).getHello()
