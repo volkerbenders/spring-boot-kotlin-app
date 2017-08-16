@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("bookmarks")
 class BookmarkController (val bookmarkService: BookmarkService){
 
-    @GetMapping("/one")
+    @GetMapping("/all")
     //fun oneBookmark() = "Me is da Bookmark"
-    fun oneBookmark() = Bookmark()
+    fun oneBookmark() = bookmarkService.all()
 
     @GetMapping("/two")
     fun twoBookmarks() : List<Bookmark>{
@@ -21,23 +21,24 @@ class BookmarkController (val bookmarkService: BookmarkService){
     }
 
     @PostMapping("/add")
-    fun addBookmark() : List<Bookmark>{
+    fun addBookmark() : Iterable<Bookmark>{
         val bookmark = Bookmark()
         return bookmarkService.addBookmark(bookmark)
 
     }
 
     @GetMapping("/add2/{title}/{url}")
-    fun addBookmarkGet(@PathVariable title: String, @PathVariable url:String) : List<Bookmark>{
+    fun addBookmarkGet(@PathVariable title: String, @PathVariable url:String) : Iterable<Bookmark>{
         val bookmark = Bookmark(title=title, url=url)
         return bookmarkService.addBookmark(bookmark)
 
     }
 
     @PostMapping("/addBookmarkPost")
-    fun addBookmarkPost(@RequestBody bookmark : Bookmark) : List<Bookmark>{
+    fun addBookmarkPost(@RequestBody bookmark : Bookmark) : Iterable<Bookmark>{
         return bookmarkService.addBookmark(bookmark)
 
     }
+
 
 }
