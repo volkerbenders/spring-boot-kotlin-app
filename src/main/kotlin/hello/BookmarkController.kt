@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("bookmarks")
-class BookmarkController (val bookmarkService: BookmarkService){
+class BookmarkController(val bookmarkService: BookmarkService){
 
     @GetMapping("/all")
     //fun oneBookmark() = "Me is da Bookmark"
@@ -36,7 +36,8 @@ class BookmarkController (val bookmarkService: BookmarkService){
 
     @PostMapping("/addBookmarkPost")
     fun addBookmarkPost(@RequestBody bookmark : Bookmark) : Iterable<Bookmark>{
-        return bookmarkService.addBookmark(bookmark)
+        //return bookmarkService.addBookmark(bookmark)
+        return bookmarkService.addBookmarkWithCategory(bookmark)
 
     }
 
