@@ -3,14 +3,22 @@ package hello
 import org.springframework.stereotype.Service
 import org.springframework.data.repository.*;
 @Service
-class BookmarkService (val bookmarkRepository: BookmarkRepository, val categoryRepository : CategoryRepository) {
-    //val devs = listOf("Benedikt", "Herve", "Eddi", "Ishita", "Florian", "Volker")
+class CategoryService (val categoryRepository: CategoryRepository) {
 
-    //fun getHello() = "Hello service!"
+    fun all() = categoryRepository.findAll()
 
-    //fun getDevelopers() = "Benedikt, Volker, Herve, Eddi, Florian"
+    fun addCategory(category : Category)  : MutableIterable<Category>? {
+        categoryRepository.save(category)
+        return all()
+    }
+
+    fun findByName(name: String): MutableIterable<Category>? {
+        //return Category(name="spring", id=1)
+        return categoryRepository.findByName(name)
+    }
+    /*
     fun getDevelopers() {
-        Developer(1, "Volker", "Benders")
+        Category("Volkers Category", 1)
     }
 
     fun twoBookmarks(): List<Bookmark> {
@@ -19,7 +27,6 @@ class BookmarkService (val bookmarkRepository: BookmarkRepository, val categoryR
     }
 
     fun all() = bookmarkRepository.findAll()
-    /*
     //fun addBookmark(bookmark: Bookmark) : List<Bookmark>{
     fun addBookmark(bookmark: Bookmark) : Iterable<Bookmark>{
         //bookmarkRepository.save(bookmark)
@@ -29,17 +36,10 @@ class BookmarkService (val bookmarkRepository: BookmarkRepository, val categoryR
         //return bookmarkRepository.findAll()
         // return b
     }
-*/
     fun addBookmark(bookmark: Bookmark): Iterable<Bookmark> {
         bookmarkRepository.save(bookmark)
         return bookmarkRepository.findAll()
     }
-
-    fun addBookmarkWithCategory(bookmark: Bookmark): Iterable<Bookmark> {
-        var category = Category(name="Volkers Category", id=999)
-        category = categoryRepository.save(category)
-        bookmarkRepository.save(bookmark)
-        return bookmarkRepository.findAll()
-    }
+*/
 }
 
