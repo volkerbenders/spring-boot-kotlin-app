@@ -41,5 +41,9 @@ class BookmarkService (val bookmarkRepository: BookmarkRepository, val categoryR
         bookmarkRepository.save(bookmark)
         return bookmarkRepository.findAll()
     }
+
+    fun findBookmarksByTitle(title: String): MutableIterable<Bookmark>? {
+        return bookmarkRepository.findByTitle(title)
+    }
 }
 

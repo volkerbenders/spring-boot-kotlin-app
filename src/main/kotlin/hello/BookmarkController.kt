@@ -40,6 +40,10 @@ class BookmarkController(val bookmarkService: BookmarkService){
         return bookmarkService.addBookmarkWithCategory(bookmark)
 
     }
+    @GetMapping("findByTitle/{title}")
+    fun findBookmarksByTitle(@PathVariable("title") title: String): MutableIterable<Bookmark>? {
+        return bookmarkService.findBookmarksByTitle(title)
+    }
 
 
 }
