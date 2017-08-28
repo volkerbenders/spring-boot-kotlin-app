@@ -5,10 +5,16 @@ import org.springframework.data.repository.*;
 @Service
 class CategoryService (val categoryRepository: CategoryRepository) {
 
-    fun all() = categoryRepository.findAll();
+    fun all() = categoryRepository.findAll()
 
-    fun addCategory(category : Category)  : Category{
-        return categoryRepository.save(category)
+    fun addCategory(category : Category)  : MutableIterable<Category>? {
+        categoryRepository.save(category)
+        return all()
+    }
+
+    fun findByName(name: String): MutableIterable<Category>? {
+        //return Category(name="spring", id=1)
+        return categoryRepository.findByName(name)
     }
     /*
     fun getDevelopers() {

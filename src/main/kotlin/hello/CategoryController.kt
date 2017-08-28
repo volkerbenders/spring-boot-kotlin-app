@@ -15,18 +15,24 @@ class CategoryController(val categoryService: CategoryService){
     fun all() = categoryService.all()
 
     @PostMapping("/add")
-    fun addCategory(@RequestBody category: Category): Category {
+    fun addCategory(@RequestBody category: Category): MutableIterable<Category>? {
         return categoryService.addCategory(category)
     }
 
     @PostMapping("/addAndGet")
-    fun addAndGetCategory(@RequestBody category: Category): Category {
+    fun addAndGetCategory(@RequestBody category: Category): MutableIterable<Category>? {
+        println("addAndGetCategory: " + category)
         return categoryService.addCategory(category)
     }
 
     @PutMapping("/put")
-    fun putCategory(@RequestBody category: Category): Category {
+    fun putCategory(@RequestBody category: Category): MutableIterable<Category>? {
         return categoryService.addCategory(category)
+    }
+
+    @GetMapping("/byName/{name}")
+    fun getByName(@PathVariable("name") name : String): MutableIterable<Category>? { //name : String){
+        return categoryService.findByName(name)
     }
 
 /*
