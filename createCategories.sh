@@ -4,4 +4,4 @@
 #  curl -H "Content-Type: application/json" -X POST -d '{"name":"name_$i","id":$i}' http://127.0.0.1:11111/categories/addAndGet
 #done
 
-curl -H Content-Type: application/json -X POST -d '{"name":"name_1","id":"1"}' http://127.0.0.1:11111/categories/addAndGet
+curl -H "Content-Type: application/json" -X POST -d '{"name":"name_1","id":"1"}' http://127.0.0.1:8090/categories/addAndGet
