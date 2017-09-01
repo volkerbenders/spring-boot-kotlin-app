@@ -1,7 +1,5 @@
 package hello
 
-import hello.Bookmark
-import hello.BookmarkService
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -19,12 +17,14 @@ class MediaItemController(val mediaItemService: MediaItemService){
 
     }
 
-    /*
-    @GetMapping("findByTitle/{title}")
-    fun findBookmarksByTitle(@PathVariable("title") title: String): MutableIterable<Bookmark>? {
-        return bookmarkService.findBookmarksByTitle(title)
+    @GetMapping("/byTitle/{title}")
+    fun findByTitle(@PathVariable("title") title : String) {
+        println("MediaItemController:findByTitle: $title")
+        return mediaItemService.findByTitle(title)
     }
-    */
 
-
+    @GetMapping("/byId/{id}")
+    fun findById(@PathVariable("id") id : Long): MediaItem {
+        return mediaItemService.findById(id)
+    }
 }
