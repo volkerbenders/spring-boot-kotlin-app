@@ -1,6 +1,6 @@
 target/
 derby.log
-itzelBritzelDB/
+itzelBritzelDB*/
 
 ### IntelliJ IDEA ###
 .idea
