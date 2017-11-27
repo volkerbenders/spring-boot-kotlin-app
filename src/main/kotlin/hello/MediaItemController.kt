@@ -27,4 +27,9 @@ class MediaItemController(val mediaItemService: MediaItemService){
     fun findById(@PathVariable("id") id : Long): MediaItem {
         return mediaItemService.findById(id)
     }
+
+    @GetMapping("/byIsbn/{isbn}")
+    fun findByIsbn(@PathVariable("isbn") isbn: String): MediaItem? {
+        return mediaItemService.findByIsbn(isbn)
+    }
 }
