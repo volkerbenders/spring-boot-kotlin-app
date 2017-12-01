@@ -1,5 +1,4 @@
 #!/bin/sh
-PORT=8090
 
 curl -H "Content-Type: application/json" -X POST -d '{"title":"Das Testament","isbn13":"0123456789123"}' http://localhost:$PORT/mediaItems/add
 curl -H "Content-Type: application/json" -X POST -d '{"title":"Die Jury","isbn13":"0123456789123"}' http://localhost:$PORT/mediaItems/add
