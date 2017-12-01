@@ -14,7 +14,6 @@ class MediaItemController(val mediaItemService: MediaItemService){
     @PostMapping("/add")
     fun addMediaItem(@RequestBody mediaItem : MediaItem): MutableIterable<MediaItem>? {
         return mediaItemService.addMediaItem(mediaItem)
-
     }
 
     @GetMapping("/byTitle/{title}")
@@ -32,4 +31,10 @@ class MediaItemController(val mediaItemService: MediaItemService){
     fun findByIsbn(@PathVariable("isbn") isbn: String): MediaItem? {
         return mediaItemService.findByIsbn(isbn)
     }
+
+    @PutMapping
+    fun saveMediaItem(@RequestBody mediaItem: MediaItem): MediaItem {
+        return mediaItemService.save(mediaItem)
+    }
+
 }

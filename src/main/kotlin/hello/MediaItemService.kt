@@ -23,4 +23,9 @@ class MediaItemService(val mediaItemRepository: MediaItemRepository) {
     fun findByIsbn(isbn: String): MediaItem? {
         return mediaItemRepository.findByIsbn(isbn)
     }
+
+    fun save(mediaItem: MediaItem): MediaItem {
+        return mediaItemRepository.save(mediaItem)
+    }
+
 }

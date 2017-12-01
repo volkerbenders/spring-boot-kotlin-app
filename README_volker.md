@@ -15,3 +15,11 @@ curl -H "Content-Type: application/json" -X POST -d '{"title":"Der Test","isbn13
 * [application.properties](https://github.com/springframeworkguru/spring-boot-apache-derby-example/blob/master/src/main/resources/application.properties)
 * [Derby Dev Guide](https://db.apache.org/derby/docs/10.4/devguide/cdevdvlp40653.html)
 
+## test data
+
+test data is available it `~/Dev/source/non_commercial/meteor/meteo_media/server/importer`.
+Though it needs to be converted in an apropriat form :-)
+
+
+
+
